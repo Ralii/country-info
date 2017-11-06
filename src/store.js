@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 
 // Reducers
 import CountriesReducer from './countries/CountriesReducer';
+import CountryReducer from './countries/country/CountryReducer';
 
 export const history = createBrowserHistory();
 
