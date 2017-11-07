@@ -17,6 +17,7 @@ const rootReducer = persistReducer(
   { key: 'main', storage},
   combineReducers({
     CountriesReducer,
+    CountryReducer,
   }),
 );
 
