@@ -29,19 +29,20 @@ class App extends Component {
   const { countries, countryFilterCondition } = this.props;
     return (
       <div className="App">
+
         <header className="App-header">
           <h1 className="App-title">Eu country display App</h1>
           <h2>Filtering with { countryFilterCondition }</h2>
-
         </header>
+
         <div className="App-intro">
+
           <CountryButton name="Sort by name" clickAction={this.sortByName}/>
           <CountryButton name="Sort by population" clickAction={this.sortByPopulation}/>
           <CountryButton name="Soft by area" clickAction={this.sortByArea}/>
           <CountryButton name="Only english speaking countries" clickAction={this.onlyEnglishSpeaking}/>
 
           <CountryLinkList countries={countries}/>
-
         </div>
       </div>
     );

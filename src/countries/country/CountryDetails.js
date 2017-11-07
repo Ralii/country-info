@@ -11,7 +11,7 @@ export default class CountryDetails extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.country !== nextProps.country ) {
-
+      this.props.getCountry(this.props.match.params.id);
       this.props.getNeighbours(nextProps.country.borders);
     }
   }
@@ -27,12 +27,10 @@ export default class CountryDetails extends Component {
         ? <Neighbours neighbours={neighbours} />
         : (null)
       }
-
       </div>
     )
   }
 }
-
 CountryDetails.PropTypes = {
   country: PropTypes.object,
   neighbours: PropTypes.array,

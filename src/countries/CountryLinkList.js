@@ -11,8 +11,8 @@ export default class CountryLinkList extends Component {
     return (
       <div>
       {this.props.countries.map( (country, index) =>
-        <div className="left">
-          <Link key={index} to={"/country/" +country.alpha2Code}> {country.name}</Link>
+        <div className="left" key={index}>
+          <Link to={"/country/" +country.alpha2Code}> {country.name}</Link>
         </div>
       )}
         <div className="right">
