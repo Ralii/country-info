@@ -17,18 +17,24 @@ export const getCountry = (country) => (dispatch) => {
 export const getNeighbours = (neighbours) => (dispatch) => {
   dispatch({ type: 'NEIGHBOUR_REQUEST' });
   let callString = 'https://restcountries.eu/rest/v2/alpha?codes=';
-  // eslint-disable-next-line
-  neighbours.map( (neighbour) => {
-    callString += neighbour;
-    callString += ';';
-  })
-  return fetch(callString)
-    .then(response => response.json())
-    .then(result => dispatch({
-      type: 'GET_NEIGHBOUR_REQUEST',
-      payload: result,
-    }))
+  if(neighbours.length > 0 ) {
+      // eslint-disable-next-line
+      neighbours.map( (neighbour) => {
+      callString += neighbour;
+      callString += ';';
+    })
+    return fetch(callString)
+      .then(response => response.json())
+      .then(result => dispatch({
+        type: 'GET_NEIGHBOUR_REQUEST',
+        payload: result,
+      }))
+  } else {
+    return dispatch({
+      type: 'GET_NEIGHBOUR_REQUEST_NO_NEIGHBOURS',
+    })
   }
+}
 
 //Reducer
 export default (state = initialState, action) => {

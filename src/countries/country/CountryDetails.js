@@ -10,19 +10,24 @@ export default class CountryDetails extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.country !== nextProps.country) {
-      this.props.getNeighbours(this.props.country.borders);
+    if(this.props.country !== nextProps.country ) {
+
+      this.props.getNeighbours(nextProps.country.borders);
     }
   }
 
   render(){
-    const { country } = this.props;
+    const { country, neighbours } = this.props;
     return(
       <div>
       <h1>Name: {country.name}</h1>
       <img src={country.flag} alt="country"/>
       <h2>Neighbours</h2>
-      <Neighbours neighbours={this.props.neighbours} />
+      { typeof(neighbours) !== 'undefined'
+        ? <Neighbours neighbours={neighbours} />
+        : (null)
+      }
+
       </div>
     )
   }

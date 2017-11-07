@@ -13,16 +13,12 @@ import CountryReducer from './countries/country/CountryReducer';
 
 export const history = createBrowserHistory();
 
-const rootReducer = persistReducer(
-  { key: 'main', storage},
-  combineReducers({
-    CountriesReducer,
-    CountryReducer,
-  }),
-);
 
 export const store = createStore(
-  rootReducer,
+  combineReducers({
+      CountriesReducer,
+      CountryReducer,
+  }),
   composeWithDevTools(
     applyMiddleware(thunk),
     applyMiddleware(routerMiddleware(history)),

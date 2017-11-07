@@ -27,7 +27,6 @@ class App extends Component {
 
   render() {
   const { countries, countryFilterCondition } = this.props;
-  console.log(countries);
     return (
       <div className="App">
         <header className="App-header">
