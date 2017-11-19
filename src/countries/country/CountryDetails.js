@@ -30,7 +30,7 @@ export default class CountryDetails extends Component {
   }
 
   render(){
-    const { country, countries, neighbours, countriesRouteData, routeToSelectedCountry } = this.props;
+    const { country, neighbours, countriesRouteData, routeToSelectedCountry } = this.props;
     return(
       <div>
       <h1>Name: {country.name}</h1>

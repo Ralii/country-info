@@ -39,7 +39,6 @@ export const getNeighbours = (neighbours) => (dispatch) => {
 
 export const getPathToCountry = (countriesRouteData,targetCountry,currentCountry) => (dispatch) => {
   dispatch({type: 'GET_PATH_TO_COUNTRY'});
-  console.log(currentCountry);
 
 const neighboursAsObjects = (node, countriesRouteData) => {
   return node.neighbours.map( (neighbour) => {
@@ -87,13 +86,10 @@ const neighboursAsObjects = (node, countriesRouteData) => {
     neighbours: currentCountry.borders,
   }]
 
-  const haku = breathFirstSearch(targetCountry,[transformCurrentCountry],[]);
+  breathFirstSearch(targetCountry,[transformCurrentCountry],[]);
   routeOptions.sort( (a,b) => {
-    console.log(a.path);
-    console.log(b.path);
     return a.path.length - b.path.length;
   })
-  console.log(routeOptions);
 
   dispatch({
     type: 'ROUTE_TO_SELECTED_COUNTRY',
