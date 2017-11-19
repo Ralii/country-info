@@ -20,7 +20,7 @@ const history = createBrowserHistory();
 
 
 const rootReducer = persistReducer(
-  { key: 'main', storage},
+  { key: 'primary', storage},
   combineReducers({
     CountriesReducer,
     CountryReducer,
