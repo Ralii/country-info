@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
 
 import { getCountries, sortByName, sortByPopulation, sortByArea, onlyEnglishSpeaking } from './CountriesReducer';
-import Countries from './Countries'
+import Countries from './Countries';
 
 const countriesSelector = (state) => state.countries;
 const countryFilterSelector = (state) => state.countryFilterCondition;
