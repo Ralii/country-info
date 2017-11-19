@@ -1,8 +1,7 @@
 const initialState = {
   country: {},
   neighbours: [],
-  routeToSelectedCountry: [{name:'moi'}],
-  hei: 'moi',
+  routeToSelectedCountry: [],
 };
 
 // Actions
